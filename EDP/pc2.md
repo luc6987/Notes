@@ -127,11 +127,11 @@ $$
 
 证:回顾Coercive的定义:
 
-Plus spécifiquement, une forme bilinéaire $X\times X\to \mathbb {R}$ est dite coercive si elle vérifie :
+Une forme bilinéaire $X\times X\to \mathbb {R}$ est dite coercive si elle vérifie :
 
 $$ \exists \,\alpha >0,\quad \forall \,x\in X:\qquad a(x,x)\geqslant \alpha \|x\|^{2}.$$
 
-并注意到:
+简单来说coercive就是在无穷处取值无穷,并注意到:
 
 $$
 a(u, u) = \int_0^1 k(x) (u'(x))^2 \, dx + \alpha \int_0^1 u^2(x) \, dx \geq k_0 \|u'\|^2_{L^2(0,1)} + \alpha \|u\|^2_{L^2(0,1)} \geq \min(k_0, \alpha) \|u\|^2_V.
@@ -141,7 +141,17 @@ $$
 
 c. 当 $\alpha = 0$ 时，如何证明(3)存在唯一解？
 
+证:此时Coercivité条件化为:
 
+$$
+a(u, u)\geq k_0 \|u'\|^2_{L^2(0,1)} .
+$$
+
+我们只需要证明$\exist C$, t.q. $k_0 \|u'\|^2_{L^2(0,1)}\geq C\|u\|^2_{L^2(0,1)}$.
+
+接下来用LN公式和柯西不等式放缩即可.
+
+注意这里有两种可能性,分别是$V$和$V_0$中的范数,证明方法一样.
 
 ---
 
