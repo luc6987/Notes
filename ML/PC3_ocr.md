@@ -21,22 +21,22 @@ $$H(f,\eta) = \eta l(f) + (1-\eta)l(-f).$$
 2.  Prove that the optimal $\tilde{f}$ of $H(f,\eta)$ for a given $\eta$ has the same sign as $2\eta-1$. 
 Solution: We want to minimize $H(f,\eta)$ with respect to $f$. We can not compute the derivative of $H$ with respect to $f$, because $l$ is not differentiable everywhere. However, we can compute the subdifferential of $H$ with respect to $f$:
 $$\partial_{f}H(f,\eta) = \eta \partial l(f) - (1-\eta)\partial l(-f).$$
-When the optimal $\tilde{f}$ is reached, $0\in \partial_{f}H(\tilde{f},\eta)$.
-We introduce $\xi_+ := \partial l(f)$ and $\xi_- := \partial l(-f)$. So at the optimum, we have
-$$0\in \eta \xi_+ - (1-\eta)\xi_-.$$
-
+When the optimal $\tilde{f}$ is reached, $0\in \partial_{f}H(\tilde{f},\eta)$.So at the optimum, we have 
+$$0\in \eta \partial l(f) - (1-\eta)\partial l(-f).$$
+This is to say, exist $\xi_+$ and $\xi_-$, such that
+$$0= \eta \xi_+ - (1-\eta)\xi_-.$$
 We recall the properties of $l$:
 - $l$ is non-decreasing, thus $\xi_+ <0$ and $\xi_- <0$.
 - $l$ is convex, thus if $f < -f$, $\xi_+ < \xi_-$ and if $f > -f$, $\xi_+ > \xi_-$.
 - $l\in \mathcal{C}^{1}(0)$, thus $\xi_+ = -1$ and $\xi_- = -1$ if $\tilde{f}=0$ and $2\eta - 1 = 0$. This tells us that $\tilde{f}$ and $2\eta - 1$ have the same sign.
 
 We now analyze the sign: If $\tilde{f} > 0$, then $\tilde{f} > -\tilde{f}$, thus $\xi_+ > -\xi_-$. So we have
-$$0\in \eta \xi_+ - (1-\eta)\xi_-\geq(2\eta - 1)\xi_+.$$
+$$0= \eta \xi_+ - (1-\eta)\xi_-\geq(2\eta - 1)\xi_+.$$
 We know that $\xi_+ < 0$, thus $2\eta - 1 > 0$. In this case $\tilde{f}$ and $2\eta - 1$ have the same sign.
 
 Similarly, we can prove the case $\tilde{f} < 0$.
 
-3.  Conclude.
+1.  Conclude.
 
 Solution: We have proved that for a given $\eta$, the optimal $\tilde{f}$ of $H(f,\eta)$ has the same sign as $2\eta - 1$. Thus, the optimal $\tilde{f}(\underline{X})$ of $\mathbb{E}[H(f(\underline{X}),\eta(\underline{X}))]$ has the same sign as $2\eta(\underline{X}) - 1$. We know that the Bayes classifier is defined by $f^{*}(\underline{X}) = sign(2\eta(\underline{X}) - 1)$. Thus, $\tilde{f}$ and $f^{*}$ have the same sign.
 
